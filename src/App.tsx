@@ -6,7 +6,10 @@ function App() {
 
   const fetchMessage = async () => {
     const req = await fetch(`${BASE_URL}`, {
-      method: 'GET'
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+
     })
 
     if(req.ok){
@@ -19,7 +22,9 @@ function App() {
 
   const setCookie = async () => {
     const req = await fetch(`${BASE_URL}/set-cookie`, {
-      method: 'POST'
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
     })
 
     if(req.ok){
